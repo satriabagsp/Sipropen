@@ -1,0 +1,853 @@
+/* Variables
+------------------------------------------------------------------
+{
+  Color: [
+    {
+      value: 'blue',
+      sample: '#72adb4',
+      NormalColor: '#a3e3e9',
+      HoverColor: '#307077',
+	  MainBgColor: '#73aeb4',
+	  LogoShadow: '#d5e0db',
+	  NavActiveColor: '#3E858C',
+	  NavBorder: '#306d73',
+	  SubNavHover: '#579da4',
+	  ContentHeading: '#2b545a',
+	  BannerHeading: '#73aeb4',
+	  FooterLink: '#9cb4b7',
+	  FooterHover: '#98f0fb',
+	  FooterBg: '#383838',
+	  BannerBorder: '#1b2f31'
+    },
+    {
+      value: 'green',
+      sample: '#8ab15b',
+      NormalColor: '#cdf79a',
+      HoverColor: '#485933',
+	  MainBgColor: '#8bb25c',
+	  LogoShadow: '#e1e7da',
+	  NavActiveColor: '#638a34',
+	  NavBorder: '#485933',
+	  SubNavHover: '#7ea352',
+	  ContentHeading: '#485933',
+	  BannerHeading: '#9ec76d',
+	  FooterLink: '#9fb289',
+	  FooterHover: '#d7f6ab',
+	  FooterBg: '#383838',
+	  BannerBorder: '#2c4212'
+    },
+    {
+      value: 'mauve',
+      sample: '#b47398',
+      NormalColor: '#ffb6e0',
+      HoverColor: '#733658',
+	  MainBgColor: '#b47398',
+	  LogoShadow: '#e8dee3',
+	  NavActiveColor: '#7c3a5f',
+	  NavBorder: '#692c4e',
+	  SubNavHover: '#924d74',
+	  ContentHeading: '#4d1e38',
+	  BannerHeading: '#d195b7',
+	  FooterLink: '#a98b9c',
+	  FooterHover: '#e6a4c9',
+	  FooterBg: '#383838',
+	  BannerBorder: '#4d1e38'
+    },
+    {
+      value: 'orange',
+      sample: '#e8861d',
+      NormalColor: '#ffc17e',
+      HoverColor: '#804300',
+	  MainBgColor: '#e8861d',
+	  LogoShadow: '#f1e6db',
+	  NavActiveColor: '#d56d05',
+	  NavBorder: '#a25500',
+	  SubNavHover: '#e8861d',
+	  ContentHeading: '#804300',
+	  BannerHeading: '#fa9d3c',
+	  FooterLink: '#cd9c69',
+	  FooterHover: '#fec080',
+	  FooterBg: '#3f2100',
+	  BannerBorder: '#e8841c'
+    },
+    {
+      value: 'purple',
+      sample: '#987fa3',
+      NormalColor: '#d8bbe6',
+      HoverColor: '#5b386a',
+	  MainBgColor: '#987fa3',
+	  LogoShadow: '#e3dfe5',
+	  NavActiveColor: '#62456f',
+	  NavBorder: '#522d62',
+	  SubNavHover: '#734f83',
+	  ContentHeading: '#4b3157',
+	  BannerHeading: '#b194be',
+	  FooterLink: '#a997b1',
+	  FooterHover: '#e0beef',
+	  FooterBg: '#383838',
+	  BannerBorder: '#301c39'
+    }
+  ]
+}
+------------------------------------------------------------------
+*/
+
+/* Resets
+--------------------------------------------------------------------------------*/
+
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input {
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: 0;
+}
+
+a {
+	color: $NormalColor;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $HoverColor;
+}
+
+/* General Styling and Structure
+--------------------------------------------------------------------------------*/
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	background: #383838;
+}
+
+h2 {
+	font-size: 2.2em;
+	margin: 0;
+	padding: .3em 0;
+	line-height: 1.2;
+	font-family: "Anton", Arial, Helvetica, sans-serif;
+	text-shadow: 1px 3px 0 rgba(0, 0, 0, 0.1);
+	text-transform: uppercase;
+	-webkit-text-stroke-width: 0.2px;
+}
+
+#content h2 {
+	color: $ContentHeading;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 0;
+	padding: .5em 0;
+}
+
+hr {background:$ContentHeading !important;}
+
+#content p {
+	color: #fff;
+}
+
+#content abbr {
+	border-bottom: 1px dotted #8f8f8f;
+}
+
+#page {
+	margin: 0 auto;
+	width: 950px;
+}
+
+#header-wrap {
+	background: #fcfcfc url(header-bg-$Color.jpg) center bottom repeat;
+	min-width: 950px;
+	clear: both;
+}
+
+#header {
+	padding: 0 22px;
+	margin: 0;
+}
+blockquote {
+	font-style:italic;
+	border-left:4px solid $ContentHeading;
+	margin:10px 0 10px 0;
+	padding-left:20px;
+	line-height:1.5;
+	color:$ContentHeading;
+}
+.wsite-logo,
+.wsite-logo a:hover {
+	color: #4a4a4a;
+}
+
+#logo,
+#logo a {
+	font-size: 40px;
+	color: #4a4a4a;
+	margin: 0;
+	font-weight: normal;
+	padding: 0;
+	float: left;
+	font-family: "Anton", Arial, Helvetica, sans-serif;
+	text-shadow: 1px 3px 0 $LogoShadow;
+	-webkit-text-stroke-width: 0.2px;
+	text-transform: uppercase;
+}
+
+#header-right a {
+	color: #44848a;
+}
+
+#header-right a:hover {
+	color: #73aeb4;
+}
+
+/* Header Area
+-------------------------------------------------------------*/
+
+#header {
+	width: 100%;
+	height: 120px;
+}
+
+#header,
+#header table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#header td {
+	vertical-align: middle;
+	text-align: left;
+}
+
+#logo {
+	padding: 20px 0 30px 10px;
+}
+
+#header-right {
+	padding: 0 0 10px 10px;
+}
+
+#header-right table {
+	width: 1px;
+}
+
+#header-right table,
+#header-right .search,
+#header-right .wsite-search {
+	clear: right;
+	float: right;
+}
+
+#header-right td {
+	padding: 0;
+}
+
+/* TOP RIGHT: Phone Number
+--------------------------------------------------------------------------------*/
+
+#header-right .phone-number .wsite-text {
+	color: #6d6d6d;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	display: block;
+	white-space: nowrap;
+	margin: 5px 0 5px 15px;
+}
+
+/* TOP RIGHT: Social Links
+--------------------------------------------------------------------------------*/
+
+#header-right .wsite-social {
+	vertical-align: middle;
+	margin: 5px 0 5px 10px;
+}
+
+
+.wsite-social-item {
+	width: 23px;
+	height: 23px;
+	margin: 0 0 0 3px;
+	background-image:url(social-$color.png);
+}
+
+.wsite-social-facebook {background-position:0 0;}
+	.wsite-social-facebook:hover {background-position:0 -23px;}
+	.wsite-social-facebook:active {background-position:0 -46px;}
+.wsite-social-pinterest {background-position:-23px 0;}
+	.wsite-social-pinterest:hover {background-position:-23px -23px;}
+	.wsite-social-pinterest:active {background-position:-23px -46px;}
+.wsite-social-twitter {background-position:-46px 0;}
+	.wsite-social-twitter:hover {background-position:-46px -23px;}
+	.wsite-social-twitter:active {background-position:-46px -46px;}
+.wsite-social-linkedin {background-position:-69px 0;}
+	.wsite-social-linkedin:hover {background-position:-69px -23px;}
+	.wsite-social-linkedin:active {background-position:-69px -46px;}
+.wsite-social-mail {background-position:-92px 0;}
+	.wsite-social-mail:hover {background-position:-92px -23px;}
+	.wsite-social-mail:active {background-position:-92px -46px;}
+.wsite-social-rss {background-position:-115px 0;}
+	.wsite-social-rss:hover {background-position:-115px -23px;}
+	.wsite-social-rss:active {background-position:-115px -46px;}
+.wsite-social-flickr {background-position:-138px 0;}
+	.wsite-social-flickr:hover {background-position:-138px -23px;}
+	.wsite-social-flickr:active {background-position:-138px -46px;}
+.wsite-social-plus {background-position:-161px 0;}
+	.wsite-social-plus:hover {background-position:-161px -23px;}
+	.wsite-social-plus:active {background-position:-161px -46px;}
+.wsite-social-vimeo {background-position:-184px 0;}
+	.wsite-social-vimeo:hover {background-position:-184px -23px;}
+	.wsite-social-vimeo:active {background-position:-184px -46px;}
+.wsite-social-yahoo {background-position:-207px 0;}
+	.wsite-social-yahoo:hover {background-position:-207px -23px;}
+	.wsite-social-yahoo:active {background-position:-207px -46px;}
+.wsite-social-youtube {background-position:-230px 0;}
+	.wsite-social-youtube:hover {background-position:-230px -23px;}
+	.wsite-social-youtube:active {background-position:-230px -46px;}
+
+
+/* TOP RIGHT: Search Box
+--------------------------------------------------------------------------------*/
+
+#header-right .search {
+}
+
+#header-right .wsite-search {
+	margin: 5px 0 5px 15px;
+	vertical-align: middle;
+}
+
+#header-right .wsite-search-input {
+	width: 137px;
+	height: 14px;
+	border: none;
+	padding: 8px 10px 6px !important;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6d6d6d;
+	font-size: 12px;
+	background: url(input-bg.png) no-repeat;
+}
+
+#header-right .wsite-search-button {
+	position: relative;
+	width: 27px;
+	height: 28px;
+	color: #010101;
+	font-size: 12px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: url(submit-bg.png) no-repeat;
+}
+
+/* Navigation
+--------------------------------------------------------------------------------*/
+
+#topnav {
+	clear: both;
+	height: 30px;
+	padding: 12px 20px;
+	margin: 0 0 20px;
+	overflow: hidden;
+	background: url(nav-bg-$Color.png) repeat-x;
+}
+
+#topnav ul {
+	list-style: none;
+	float: left;
+}
+
+#topnav ul li {
+	list-style: none;
+	float: left;
+	padding: 0 10px 0 0;
+}
+
+#topnav a {
+	float: left;
+	display: block;
+	color: #f1eee7;
+	text-decoration: none;
+	font-family: "Anton", Impact, Charcoal, sans-serif;
+	padding: 6px 12px;
+	font-size: 18px;
+	border: 0;
+	outline: 0;
+	margin: 0;
+	list-style-type: none;
+	text-transform: uppercase;
+	line-height: 1;
+	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#topnav li#active a,
+#topnav a:hover {
+	color: #f1eee7;
+	background: $NavActiveColor;
+	border: 0;
+}
+
+/****************************** flyout menus ******************************/
+
+#wsite-menus .wsite-menu li a {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 8px;
+	color: #ffffff;
+	background: $NavActiveColor;
+	border: 0;
+	border-bottom: 1px solid $NavBorder;
+}
+
+#wsite-menus .wsite-menu li a:hover {
+	color: #ffffff;
+	background: $SubNavHover;
+}
+
+/* main  */
+
+#main-wrap {
+	background: $MainBgColor url(main-wrap-$Color.jpg) center top repeat-x;
+	padding: 25px 0 0;
+	min-width: 950px;
+	clear: both;
+}
+
+#main {
+}
+
+#content {
+	min-height: 400px;
+	padding: 18px 22px;
+}
+
+#banner {
+	background: url(banner-top-$Color.png) no-repeat;
+	padding-top: 23px;
+}
+
+#banner-bot {
+	background: url(banner-bot-$Color.png) left bottom no-repeat;
+	padding-bottom: 24px;
+}
+
+#banner-b {
+	background: url(bot-bdr-$Color.png) left bottom no-repeat;
+	padding-bottom: 6px;
+	overflow: hidden;
+}
+
+#banner-r {
+	background: url(left-bdr-$Color.png) right top no-repeat;
+	padding-right: 5px;
+}
+
+#banner-wrap {
+	border: 8px solid $BannerBorder;
+}
+
+#banner-mid {
+	background: url(banner-mid-$Color.png) repeat-y;
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+/* PAGE TYPE: banner-tall
+--------------------------------------------------------------------------------*/
+
+.tall-header-page .wsite-header {
+	width: 889px;
+	height: 235px;
+	background: url(banner-tall.jpg) no-repeat;
+}
+
+/* PAGE TYPE: banner-short
+--------------------------------------------------------------------------------*/
+
+.short-header-page .wsite-header {
+	width: 889px;
+	height: 135px;
+	background: url(banner-short.jpg) no-repeat;
+}
+
+.no-header-page #banner-bot {
+	display: none;
+}
+
+.no-header-page #content {
+	padding-top: 18px;
+}
+
+.no-header-page #topnav {
+	margin-bottom: 0;
+}
+
+.no-header-page #footer {
+	min-height: 100px;
+}
+
+/* PAGE TYPE: banner-landing
+--------------------------------------------------------------------------------*/
+
+.landing-page #banner {
+	border: none;
+}
+
+.landing-page #banner-b {
+	background: url(landing-banner-bot-$Color.png) left bottom no-repeat;
+	padding-bottom: 6px;
+}
+
+.landing-page #banner-r {
+	background: url(landing-banner-right-$Color.png) right top no-repeat;
+	padding-right: 5px;
+}
+
+.landing-page #banner-mid {
+	background: url(banner-landing-mid-$Color.png) repeat-y;
+	height: 317px;
+}
+
+.landing-page #banner-detail {
+	background: #66c9c1;
+}
+
+#bannerleft {
+	float: left;
+	width: 564px;
+	padding: 0;
+	position: relative;
+}
+
+.landing-page .wsite-header {
+	width: 543px;
+	height: 295px;
+	background: url(banner-landing.jpg) no-repeat;
+}
+
+.landing-banner-outer {
+	display: table;
+	#position: relative;
+	overflow: hidden;
+}
+
+.landing-banner-mid {
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.landing-banner-inner {
+	#position: relative;
+	#top: -50%;
+}
+
+#bannerright {
+	float: right;
+	width: 270px;
+	height: 317px;
+	padding: 0 30px;
+}
+
+#bannerright h2 {
+	color: $BannerHeading;
+	font-size: 30px;
+	padding: 0px;
+	line-height: 28px;
+}
+
+#bannerright p {
+	color: #fff;
+	font-size: 1.1em;
+	padding: 20px 0px;
+	line-height: 140%;
+}
+
+#bannerright .wsite-button {
+	margin: 0px;
+}
+
+/* PAGE TYPE: splash
+--------------------------------------------------------------------------------*/
+
+.splash-page #header {
+	width: 532px;
+}
+
+.splash-page #banner {
+	width: 527px;
+	height: 161px;
+	padding: 6px 4px 4px 6px;
+	background: url(banner-splash-bg.png) no-repeat;
+}
+
+.splash-page .wsite-header {
+	width: 515px;
+	height: 149px;
+	background: url(banner-splash.jpg) no-repeat;
+}
+
+.splash-page #content-container {
+	width: 528px;
+}
+
+.splash-page #content {
+	width: 528px;
+}
+
+.splash-page #footer {
+	width: 524px;
+}
+
+/* Footer
+--------------------------------------------------------------------------------*/
+
+#footer-wrap {
+	background: $FooterBg url(footer-wrap2-$Color.png) center top repeat-x;
+	min-width: 950px;
+}
+
+#footer {
+	padding: 45px 22px 50px;
+	font-size: 12px;
+	color: $FooterLink;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+
+#footer p {
+	color: #888;
+}
+
+#footer a {
+	color: $FooterLink;
+}
+
+#footer a:hover {
+	color: $FooterHover;
+}
+
+#footer h2 {
+	font-size: 20px;
+	padding: .3em 0;
+	line-height: 1.5;
+	color: #ddd;
+}
+#footer blockquote {
+	font-style:italic;
+	border-left:4px solid #666;
+	margin:10px 0 10px 0;
+	padding-left:20px;
+	line-height:1.5;
+	color:#888;
+}
+.wsite-footer {  /* make sure enough space between element footer and attribution */
+	margin-bottom: 15px;
+}
+#footer hr {background:#fff !important;}
+
+/* Form Customization
+--------------------------------------------------------------------------------*/
+
+.wsite-form-label {
+	display: inline-block;
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	padding: 12px 0 5px 0;
+}
+
+.form-radio-container {
+	color: #ffffff;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.wsite-form-input, .wsite-search-element-input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666666;
+	border: 1px solid #4d868c;
+	padding: 7px 4px 6px !important;
+	line-height: 1;
+	background: #fff url(field.png) repeat-x;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.form-select {
+	color: #666666;
+	border: 1px solid #4d868c;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 3px 4px;
+	width: 320px;
+	height: 27px;
+	line-height: 27px;
+	background: url#fff (field.png);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.blogCommentSubreplyWrapper div.iframeWrapper{
+	background:#4A8C95;
+	border:1px solid #447075;
+	color:#fff;
+}
+
+/* Footer Form Customization
+--------------------------------------------------------------------------------*/
+
+.wsite-form-container {
+	margin-top:0px !important;
+	text-align:left;
+}
+
+.wsite-footer .wsite-form-label {
+	font-size: 1em;
+	padding: 5px 0 2px 0;
+}
+
+.wsite-footer .wsite-form-field {
+	width:300px !important;
+}
+
+.wsite-footer .form-radio-container {
+	font-size:1em;
+}
+
+.wsite-footer .wsite-form-input {
+	font-size: 1em;
+	width: 100% !important;
+}
+
+.wsite-footer .form-select {
+	width: 100%;
+}
+
+/* Buttons
+--------------------------------------------------------------------------------*/
+
+/*
+  Buttons are styled with background image sprites. There are 4 unique image files:
+   - small & normal-colored  (button_small_grey.png)
+   - large & normal-colored  (button_large_grey.png)
+   - small & highlight-colored  (button_small_orange.png)
+   - large & highlight-colored  (button_large_orange.png)
+
+  Each of these 4 types of buttons must define a :hover state (when user's mouse is over)
+  as well as an :active state (when the user presses down).
+
+  Look at the CSS (especially the inner .wsite-button-inner wrapper), as well as the
+  image files to understand how the liquid-width nature of these buttons work.
+ */
+
+/* small */
+
+.wsite-button {
+	color: #fff !important;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 35px;
+	display: inline-block;
+	font-size: 12px;
+	border: none;
+	font-weight: bold;
+	font-size: 13px;
+	text-decoration: none;
+	padding: 0 17px 0 0;
+	background: url(button-$Color.png) no-repeat 100% -105px;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.9);
+}
+
+.wsite-button:hover {
+	background-position: 100% -140px;
+}
+
+.wsite-button:active {
+	background-position: 100% -175px;
+}
+
+.wsite-button-inner {
+	height: 35px;
+	line-height: 34px;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	border: none;
+	text-decoration: none;
+	padding: 0 10px 0 27px;
+	background: url(button-$Color.png) no-repeat 0 0;
+}
+
+.wsite-button:hover .wsite-button-inner {
+	background-position: 0 -35px;
+}
+
+.wsite-button:active .wsite-button-inner {
+	background-position: 0 -70px;
+}
+
+/* large */
+
+.wsite-button-large {
+	height: 42px;
+	background: url(button_large-$Color.png) no-repeat 100% -126px;
+	padding: 0 18px 0 0;
+}
+
+.wsite-button-large:hover {
+	background-position: 100% -168px;
+}
+
+.wsite-button-large:active {
+	background-position: 100% -210px;
+}
+
+.wsite-button-large .wsite-button-inner {
+	height: 42px;
+	line-height: 41px;
+	padding: 0 10px 0 25px;
+	background: url(button_large-$Color.png) no-repeat 0 0;
+}
+
+.wsite-button-large:hover .wsite-button-inner {
+	background-position: 0 -42px;
+}
+
+.wsite-button-large:active .wsite-button-inner {
+	background-position: 0 -84px;
+}
+
+/* highlight */
+
+/*
+Making the highlighted versions of the buttons is easy because we just need
+to switch out the background images. This works because the different button
+states (normal, :hover, :active) have their sprite coordinates in the same places.
+*/
+
+.wsite-button-large.wsite-button-highlight {
+	background-image: url(button_large_highlight-$Color.png);
+}
+
+.wsite-button-large.wsite-button-highlight .wsite-button-inner {
+	background-image: url(button_large_highlight-$Color.png);
+}
+
+.wsite-button-highlight {
+	background-image: url(button_highlight-$Color.png);
+}
+
+.wsite-button-highlight .wsite-button-inner {
+	background-image: url(button_highlight-$Color.png);
+}
