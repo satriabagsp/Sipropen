@@ -318,7 +318,7 @@ class DataKabkotaLpController extends Controller
             ]);
         };
 
-        //Buat variabel array untuk dikirimkan ke halam view
+        //Buat variabel array untuk dikirimkan ke halaman view
           for($t=0;$t<count($tahun_data);$t++){
             $provider[$t] = ${'provider_t'.$t};
             $total_jumlah[$t] = array_sum(${'data_jumlah_t'.$t});
@@ -568,7 +568,8 @@ class DataKabkotaLpController extends Controller
 
     public function actionHapus()
     {
-        //Hapus hasil proyeksi yang sudah pernah dibuat-->
+      if (Yii::$app->user->identity->role == 'provinsi'){
+        //Hapus data kabupaten/kota pada provinsi tersebut-->
           $id_provinsi = substr(Yii::$app->user->identity->wilayah_id, 0, 2);
         //Buat koneksi ke DB
           include "koneksi.php";
@@ -576,10 +577,19 @@ class DataKabkotaLpController extends Controller
                               FROM data_kabkota_lp
                               WHERE SUBSTRING(id_wilayah,1,2) = '" . $id_provinsi . "'";
             $query_hapusData = mysqli_query($host,$sql_hapusData) or die(mysqli_error());
+      }
+      elseif (Yii::$app->user->identity->role == 'kabkota'){
+        //Buat koneksi ke DB
+          include "koneksi.php";
+            $sql_hapusData = "DELETE 
+                              FROM data_kabkota_lp
+                              WHERE id_wilayah = '" . Yii::$app->user->identity->wilayah_id . "'";
+            $query_hapusData = mysqli_query($host,$sql_hapusData) or die(mysqli_error());
+      }
 
         return $this->redirect(['index']);
-          
     }
+          
 
     public function actionImport()
     {

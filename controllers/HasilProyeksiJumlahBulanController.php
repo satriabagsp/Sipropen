@@ -78,7 +78,7 @@ class HasilProyeksiJumlahBulanController extends Controller
         
 
         if ($hasilCek){
-          //Ambil tahun yang ada
+          //Ambil bulan yang ada
             $sql_tahun = "SELECT tahun_proyeksi
                           FROM hasil_proyeksi_jumlah_bulan
                           WHERE SUBSTRING(id_wilayah,1,2) = '" . $id_provinsi . "'
@@ -89,6 +89,19 @@ class HasilProyeksiJumlahBulanController extends Controller
             while($row = mysqli_fetch_array($query_tahun)){ 
                 $tahun++; //jumlah tahun yang ada.
                 $tahun_proyeksi[] = $row['tahun_proyeksi'];
+            };
+
+          //Ambil tahun yang ada
+            $sql_tahun1 = "SELECT tahun_proyeksi
+                          FROM hasil_proyeksi_jumlah
+                          WHERE SUBSTRING(id_wilayah,1,2) = '" . $id_provinsi . "'
+                          GROUP BY tahun_proyeksi
+                          having count(*)>1 ";
+            $query_tahun1 = mysqli_query($host,$sql_tahun1) or die(mysqli_error());
+            $tahun1='';
+            while($row = mysqli_fetch_array($query_tahun1)){ 
+                $tahun1++; //jumlah tahun yang ada.
+                $tahun_proyeksi1[] = $row['tahun_proyeksi'];
             };
 
           //Mulai ambil data
@@ -250,6 +263,7 @@ class HasilProyeksiJumlahBulanController extends Controller
               'dataProvider_laki2' => $provider_laki2,
               'dataProvider_perempuan' => $provider_perempuan,
               'tahun_proyeksi' => $tahun_proyeksi,
+              'tahun_proyeksi1' => $tahun_proyeksi1,
               'id_wilayah' => $id_wilayah,
               'status_proyeksi' => 'Sudah ada proyeksi',
               'total_jumlah' => $total_jumlah,
@@ -266,12 +280,6 @@ class HasilProyeksiJumlahBulanController extends Controller
       };
     }
 
-    /**
-     * Displays a single HasilProyeksiJumlah model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -300,80 +308,198 @@ class HasilProyeksiJumlahBulanController extends Controller
           $id_provinsi_terpilih = $row['id_wilayah'];
         };
 
-      //Ambil tahun yang ada
-        $sql_tahun = "SELECT tahun_proyeksi
-                      FROM hasil_proyeksi_jumlah_bulan
-                      WHERE SUBSTRING(id_wilayah,1,2) = '".substr($id_provinsi_terpilih, 0, 2)."'
-                      GROUP BY tahun_proyeksi
-                      having count(*)>1 ";
-        $query_tahun = mysqli_query($host,$sql_tahun) or die(mysqli_error());
-        $tahun='';
-        while($row = mysqli_fetch_array($query_tahun)){ 
-          $tahun++; //jumlah tahun yang ada.
-          $tahun_proyeksi[] = $row['tahun_proyeksi'];
+      //Periksa apakah provinsi terpilih sudah ada data proyeksi yang dibuat.
+        $id_provinsi = substr($id_provinsi_terpilih, 0, 2);
+        $sql_dataCek = "SELECT *
+                        FROM hasil_proyeksi_jumlah_bulan, master_wilayah
+                        WHERE hasil_proyeksi_jumlah_bulan.id_wilayah = master_wilayah.id_wilayah
+                        AND SUBSTRING(master_wilayah.id_wilayah,1,2) = '" . $id_provinsi . "'"; 
+        $query_dataCek = mysqli_query($host,$sql_dataCek) or die(mysqli_error());
+        $hasilCek='';
+        while($row = mysqli_fetch_array($query_dataCek)){ 
+          $hasilCek++;
         };
 
-      //Mulai ambil data
-        $id_provinsi = substr($provinsi_terpilih, 0, 2);
-        for($t=0;$t<count($tahun_proyeksi);$t++){
-          //Ambil jumlah laki2 per kabupaten/kota per tahun
-            $sql_dataProyeksi = "SELECT *
-                              FROM hasil_proyeksi_jumlah_bulan, master_wilayah
-                              WHERE hasil_proyeksi_jumlah_bulan.id_wilayah = master_wilayah.id_wilayah
-                              AND hasil_proyeksi_jumlah_bulan.tahun_proyeksi = '" . $tahun_proyeksi[$t] . "'
-                              AND SUBSTRING(master_wilayah.id_wilayah,1,2) = '" . substr($id_provinsi_terpilih, 0, 2) . "'
-                              AND hasil_proyeksi_jumlah_bulan.jenis_kelamin = 'l+p'";  
-            $query_dataProyeksi = mysqli_query($host,$sql_dataProyeksi) or die(mysqli_error());
+      if ($hasilCek){  
 
-            unset($id_wilayah);
-            unset($nama_wilayah);
-            while($row = mysqli_fetch_array($query_dataProyeksi)){ 
-              $id_wilayah[] = $row['id_wilayah'];
-              $nama_wilayah[] = $row['nama_wilayah'];
-              ${'proyeksi_'.$tahun_proyeksi[$t]}[] = $row['jumlah_proyeksi'];
+        //Ambil bulan yang ada
+          $id_provinsi = substr($id_provinsi_terpilih,0,2);
+          $sql_tahun = "SELECT tahun_proyeksi
+                        FROM hasil_proyeksi_jumlah_bulan
+                        WHERE SUBSTRING(id_wilayah,1,2) = '" . $id_provinsi . "'
+                        GROUP BY tahun_proyeksi
+                        having count(*)>1 ";
+          $query_tahun = mysqli_query($host,$sql_tahun) or die(mysqli_error());
+          $tahun='';
+          while($row = mysqli_fetch_array($query_tahun)){ 
+            $tahun++; //jumlah tahun yang ada.
+            $tahun_proyeksi[] = $row['tahun_proyeksi'];
+          };
+
+          //Ambil tahun yang ada
+            $sql_tahun1 = "SELECT tahun_proyeksi
+                          FROM hasil_proyeksi_jumlah
+                          WHERE SUBSTRING(id_wilayah,1,2) = '" . $id_provinsi . "'
+                          GROUP BY tahun_proyeksi
+                          having count(*)>1 ";
+            $query_tahun1 = mysqli_query($host,$sql_tahun1) or die(mysqli_error());
+            $tahun1='';
+            while($row = mysqli_fetch_array($query_tahun1)){ 
+                $tahun1++; //jumlah tahun yang ada.
+                $tahun_proyeksi1[] = $row['tahun_proyeksi'];
             };
+
+            //Mulai ambil data
+              for($t=0;$t<count($tahun_proyeksi);$t++){
+                  //Ambil l+p per kabupaten/kota per tahun
+                    $sql_dataProyeksi = "SELECT *
+                                          FROM hasil_proyeksi_jumlah_bulan, master_wilayah
+                                          WHERE hasil_proyeksi_jumlah_bulan.id_wilayah = master_wilayah.id_wilayah
+                                          AND hasil_proyeksi_jumlah_bulan.tahun_proyeksi = '" . $tahun_proyeksi[$t] . "'
+                                          AND SUBSTRING(master_wilayah.id_wilayah,1,2) = '" . $id_provinsi . "'
+                                          AND jenis_kelamin = 'l+p'";   
+                  $query_dataProyeksi = mysqli_query($host,$sql_dataProyeksi) or die(mysqli_error());
+                  unset($id_wilayah);
+                  unset($nama_wilayah);
+                  while($row = mysqli_fetch_array($query_dataProyeksi)){ 
+                      $id_wilayah[] = $row['id_wilayah'];
+                      $nama_wilayah[] = $row['nama_wilayah'];
+                      ${'proyeksi_'.$tahun_proyeksi[$t]}[] = $row['jumlah_proyeksi'];
+                  };
+
+                  //Ambil l per kabupaten/kota per tahun
+                    $sql_dataProyeksi = "SELECT *
+                                        FROM hasil_proyeksi_jumlah_bulan, master_wilayah
+                                        WHERE hasil_proyeksi_jumlah_bulan.id_wilayah = master_wilayah.id_wilayah
+                                        AND hasil_proyeksi_jumlah_bulan.tahun_proyeksi = '" . $tahun_proyeksi[$t] . "'
+                                        AND SUBSTRING(master_wilayah.id_wilayah,1,2) = '" . $id_provinsi . "'
+                                        AND jenis_kelamin = 'l'";   
+                  $query_dataProyeksi = mysqli_query($host,$sql_dataProyeksi) or die(mysqli_error());
+                  unset($id_wilayah);
+                  unset($nama_wilayah);
+                  while($row = mysqli_fetch_array($query_dataProyeksi)){ 
+                      $id_wilayah[] = $row['id_wilayah'];
+                      $nama_wilayah[] = $row['nama_wilayah'];
+                      ${'proyeksi_laki2_'.$tahun_proyeksi[$t]}[] = $row['jumlah_proyeksi'];
+                  };
+
+                  //Ambil p per kabupaten/kota per tahun
+                    $sql_dataProyeksi = "SELECT *
+                                  FROM hasil_proyeksi_jumlah_bulan, master_wilayah
+                                  WHERE hasil_proyeksi_jumlah_bulan.id_wilayah = master_wilayah.id_wilayah
+                                  AND hasil_proyeksi_jumlah_bulan.tahun_proyeksi = '" . $tahun_proyeksi[$t] . "'
+                                  AND SUBSTRING(master_wilayah.id_wilayah,1,2) = '" . $id_provinsi . "'
+                                  AND jenis_kelamin = 'p'";   
+                  $query_dataProyeksi = mysqli_query($host,$sql_dataProyeksi) or die(mysqli_error());
+                  unset($id_wilayah);
+                  unset($nama_wilayah);
+                  while($row = mysqli_fetch_array($query_dataProyeksi)){ 
+                      $id_wilayah[] = $row['id_wilayah'];
+                      $nama_wilayah[] = $row['nama_wilayah'];
+                      ${'proyeksi_perempuan_'.$tahun_proyeksi[$t]}[] = $row['jumlah_proyeksi'];
+                  };
+              };
+
+            
+            //Jadiin dataProvider l+p
+              $data_proyeksi[] = $id_wilayah;
+              $data_proyeksi[] = $nama_wilayah;
+              for($t=0;$t<count($tahun_proyeksi);$t++){
+                $data_proyeksi[] = ${'proyeksi_'.$tahun_proyeksi[$t]};
+                $data_grafik[] = (int)${'proyeksi_'.$tahun_proyeksi[$t]}[0];
+                $total_jumlah[] = array_sum(${'proyeksi_'.$tahun_proyeksi[$t]});
+              };
+              $attributes = []; 
+              for($coba=0;$coba<count($data_proyeksi);$coba++) {
+                $attributes[] = $coba;
+              };
+              $data_proyeksi_transpose = transpose($data_proyeksi);
+
+              $provider = new ArrayDataProvider([ //menjadikan multidimensional array ke bentuk provider
+                'key' => '0',
+                'allModels' => $data_proyeksi_transpose,
+                'pagination' => [
+                  'pageSize' => count($id_wilayah),
+                ],
+                'sort' => [
+                  'attributes' => $attributes,
+                ],
+              ]);
+
+            //Jadiin dataProvider l
+              $data_proyeksi_laki2[] = $id_wilayah;
+              $data_proyeksi_laki2[] = $nama_wilayah;
+              for($t=0;$t<count($tahun_proyeksi);$t++){
+                $data_proyeksi_laki2[] = ${'proyeksi_laki2_'.$tahun_proyeksi[$t]};
+                $data_grafik_laki2[] = (int)${'proyeksi_laki2_'.$tahun_proyeksi[$t]}[0];
+                $total_jumlah_laki2[] = array_sum(${'proyeksi_laki2_'.$tahun_proyeksi[$t]});
+              };
+              $attributes = []; 
+              for($coba=0;$coba<count($data_proyeksi_laki2);$coba++) {
+                $attributes[] = $coba;
+              };
+              $data_proyeksi_laki2_transpose = transpose($data_proyeksi_laki2);
+
+              $provider_laki2 = new ArrayDataProvider([ //menjadikan multidimensional array ke bentuk provider
+                'key' => '0',
+                'allModels' => $data_proyeksi_laki2_transpose,
+                'pagination' => [
+                  'pageSize' => count($id_wilayah),
+                ],
+                'sort' => [
+                  'attributes' => $attributes,
+                ],
+              ]);
+
+            //Jadiin dataProvider l+p
+              $data_proyeksi_perempuan[] = $id_wilayah;
+              $data_proyeksi_perempuan[] = $nama_wilayah;
+              for($t=0;$t<count($tahun_proyeksi);$t++){
+                $data_proyeksi_perempuan[] = ${'proyeksi_perempuan_'.$tahun_proyeksi[$t]};
+                $data_grafik_perempuan[] = (int)${'proyeksi_perempuan_'.$tahun_proyeksi[$t]}[0];
+                $total_jumlah_perempuan[] = array_sum(${'proyeksi_perempuan_'.$tahun_proyeksi[$t]});
+              };
+              $attributes = []; 
+              for($coba=0;$coba<count($data_proyeksi_perempuan);$coba++) {
+                $attributes[] = $coba;
+              };
+              $data_proyeksi_perempuan_transpose = transpose($data_proyeksi_perempuan);
+
+              $provider_perempuan = new ArrayDataProvider([ //menjadikan multidimensional array ke bentuk provider
+                'key' => '0',
+                'allModels' => $data_proyeksi_perempuan_transpose,
+                'pagination' => [
+                  'pageSize' => count($id_wilayah),
+                ],
+                'sort' => [
+                  'attributes' => $attributes,
+                ],
+              ]);
+
+        return $this->render('index', [
+          'dataProvider' => $provider,
+          'dataProvider_laki2' => $provider_laki2,
+          'dataProvider_perempuan' => $provider_perempuan,
+          'provinsi_terpilih' => $provinsi_terpilih,
+          'id_provinsi_terpilih' => $id_provinsi_terpilih,
+          'status_data' => 'pilih_provinsi',
+          'tahun_proyeksi' => $tahun_proyeksi,
+          'tahun_proyeksi1' => $tahun_proyeksi1,
+          'id_wilayah' => $id_wilayah,
+          'total_jumlah' => $total_jumlah,
+          'nama' => $nama_wilayah,
+          'cekkk' => $data_proyeksi,
+          'stat' => 'pusat',
+          'status_proyeksi' => 'Sudah ada proyeksi',
+        ]);
+      } elseif (!$hasilCek){
+          return $this->render('index', [
+              'status_proyeksi' => 'Belum ada data',
+              'stat' => 'pusat',
+              'status_data' => 'pilih_provinsi',
+              'provinsi_terpilih' => $provinsi_terpilih,
+          ]);
         };
-
-      //Jadiin dataProvider
-            $data_proyeksi[] = $id_wilayah;
-            $data_proyeksi[] = $nama_wilayah;
-            for($t=0;$t<count($tahun_proyeksi);$t++){
-              $data_proyeksi[] = ${'proyeksi_'.$tahun_proyeksi[$t]};
-              $proyproy[] = (int)${'proyeksi_'.$tahun_proyeksi[$t]}[0];
-              $total_jumlah[] = array_sum(${'proyeksi_'.$tahun_proyeksi[$t]});
-            };
-
-            $attributes = []; 
-            for($coba=0;$coba<count($data_proyeksi);$coba++) {
-              $attributes[] = $coba;
-            };
-
-            $data_proyeksi_transpose = transpose($data_proyeksi);
-
-            $provider = new ArrayDataProvider([ //menjadikan multidimensional array ke bentuk provider
-              'key' => '0',
-              'allModels' => $data_proyeksi_transpose,
-              'pagination' => [
-                'pageSize' => 20,
-              ],
-              'sort' => [
-                'attributes' => $attributes,
-              ],
-            ]);
-
-
-
-      return $this->render('index', [
-        'dataProvider' => $provider,
-        'provinsi_terpilih' => $provinsi_terpilih,
-        'status_data' => 'pilih_provinsi',
-        'tahun_proyeksi' => $tahun_proyeksi,
-        'id_wilayah' => $id_wilayah,
-        'total_jumlah' => $total_jumlah,
-        'proyeksi_2015' => $proyproy,
-        'nama' => $nama_wilayah,
-        'cekkk' => $data_proyeksi,
-      ]);
     }
 
     /**
