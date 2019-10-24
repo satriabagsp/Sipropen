@@ -11,7 +11,7 @@ Persyaratan minimum oleh <i>template</i> proyek ini adalah server web yang mendu
 
 Namun dianjurkan pengguna untuk menggunakan PHP versi 5.6.0.
 
-
+<br>
 
 
 INSTALLASI
@@ -53,6 +53,7 @@ Sekarang Anda dapat mengakses aplikasi melalui URL berikut:
 http://localhost/sipropen/web/
 ~~~
 
+<br>
 
 KONFIGURASI
 -------------
@@ -70,6 +71,8 @@ return [
     'charset' => 'utf8',
 ];
 ```
+
+<br>
 
 **Catatan:**
 - Yii tidak secara otomatis membuat <i>database</i> untuk Anda, <i>database</i> harus dibuat secara manual sebelum Anda dapat mengaksesnya di Yii.
