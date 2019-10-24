@@ -65,7 +65,7 @@ Unduh file database yang ada di folder Database, lalu edit file `config/db.php` 
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=sipropen',
+    'dsn' => 'mysql:host=localhost;dbname=yiiblog',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
