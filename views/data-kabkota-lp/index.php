@@ -54,6 +54,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 $label = 'SENSUS '.$tahun_data[$att-2];
                             }elseif(substr($tahun_data[$att-2], 3) == '5'){
                                 $label = 'SUPAS '.$tahun_data[$att-2];
+                            }else{
+                                $label = $tahun_data[$att-2];
                             };
                             $gridColumns[] = [
                                 'label' => $label,
@@ -136,11 +138,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]); ?> 
                 </div>
                 <br>
-                <span class="pull-right">
-                    <?= Html::a('Tambah Kabupaten/kota Baru', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
-                    <?= Html::a('Import Data Baru', ['import'], ['class' => 'btn btn-warning btn-sm']) ?>
-                    <?= Html::a('Hapus Semua Data', ['hapus'], ['class' => 'btn btn-danger btn-sm']) ?>
-                </span>
+                <?php if (Yii::$app->user->identity->role == 'provinsi'): ?>
+                    <span class="pull-right">
+                        <?= Html::a('Tambah Kabupaten/kota Baru', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+                        <?= Html::a('Hapus Semua Data', ['hapus'], ['class' => 'btn btn-danger btn-sm']) ?>
+                    </span>
+                <?php endif; ?>
 
             <?php elseif ($status_proyeksi == 'belum ada data'): ?>
                 <div class="col-md-12">

@@ -221,7 +221,7 @@ AppAsset::register($this);
                         <div style="margin-top: 20px; padding-top: 0px; padding-bottom: 10px;padding-left: 10px; padding-right: 10px;">
                             <p align="justify" style="font-size:14px;"><b>
                                 Proyeksi penduduk tingkat kabupaten/kota dibuat dengan metode geometrik. </br><br>
-                                Pastikan <?= Html::a('data penduduk tingkat kabupaten/kota', ['data-kab-kota/index']) ?> dan <?= Html::a('data proyeksi tingkat provinsi', ['proy-prov/index']) ?> telah benar.</b>
+                                Pastikan <?= Html::a('data penduduk tingkat kabupaten/kota', ['data-kabkota-lp/index']) ?> dan <?= Html::a('data proyeksi tingkat provinsi', ['data-provinsi-lp/index']) ?> telah benar.</b>
                             </p>
                         </div>
                     <?php endif; ?>

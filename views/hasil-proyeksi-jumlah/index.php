@@ -427,8 +427,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php endif; ?>
 
-
-
         <?php elseif (Yii::$app->user->identity->role == 'kabkota' || $stat == 'pilih'): ?>
 
             <?php if ($status_proyeksi == 'Sudah ada proyeksi'): ?>
@@ -721,7 +719,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <center></div>
 
             <?php endif; ?>
-
 
         <?php elseif (Yii::$app->user->identity->role == 'pusat'): ?>
 

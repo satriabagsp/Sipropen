@@ -341,19 +341,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -615,19 +615,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -877,19 +877,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -982,8 +982,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <center></div>
 
             <?php endif; ?>
-
-
 
         <?php elseif (Yii::$app->user->identity->role == 'kabkota' || $stat == 'pilih'): ?>
 
@@ -1191,19 +1189,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -1462,19 +1460,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -1723,19 +1721,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
                     ];
                     $headColumns[] = [
-                        'content' => '2015',
+                        'content' => $tahun_proyeksi1[0],
                         'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
                     ];
                     $t = 1;
                     for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                         $headColumns[] = [
-                            'content' => 2015+$t,
+                            'content' => $tahun_proyeksi1[0]+$t,
                             'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                         ];
                         $t++;
                     };
                     $headColumns[] = [
-                        'content' => '2025',
+                        'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
                         'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
                     ];
 
@@ -1842,7 +1840,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php endif; ?>
 
-
         <?php elseif (Yii::$app->user->identity->role == 'pusat'): ?>
 
             <?php if ($status_data == 'kosong'): ?>  
@@ -1915,6 +1912,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p><b>Berikut adalah data hasil proyeksi penduduk kabupaten/kota <?php echo $provinsi_terpilih ?>:</b></p>
                 <?php 
 
+                    //BUAT NAMA HEADER KOLOM
                     $gridColumns = []; 
                         $gridColumns[] = [
                             'label' => 'Kode',
@@ -1928,19 +1926,206 @@ $this->params['breadcrumbs'][] = $this->title;
                             'hAlign' => 'center',
                             'pageSummary' => $provinsi_terpilih,
                         ];
-                        for($coba=2;$coba<count($cekkk);$coba++) {
+                        $gridColumns[] = [
+                            'label' => 'Juni',
+                            'attribute' => '2',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Juli',
+                            'attribute' => '3',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Agustus',
+                            'attribute' => '4',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'September',
+                            'attribute' => '5',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Oktober',
+                            'attribute' => '6',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'November',
+                            'attribute' => '7',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Desember',
+                            'attribute' => '8',
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
                             $gridColumns[] = [
+                                'label' => 'Januari',
                                 'attribute' => $coba,
-                                'label'=> 2013+$coba,
-                                'pageSummary' => true,
-                                'format'=> ['integer'],
                                 'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Februari',
+                                'attribute' => $coba+1,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Maret',
+                                'attribute' => $coba+2,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'April',
+                                'attribute' => $coba+3,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Mei',
+                                'attribute' => $coba+4,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juni',
+                                'attribute' => $coba+5,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juli',
+                                'attribute' => $coba+6,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Agustus',
+                                'attribute' => $coba+7,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'September',
+                                'attribute' => $coba+8,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Oktober',
+                                'attribute' => $coba+9,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'November',
+                                'attribute' => $coba+10,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Desember',
+                                'attribute' => $coba+11,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
                             ];
                         };
-                            $gridColumns[] = [
-                                'class' => 'yii\grid\ActionColumn',
-                                'template' => '{view}'
+                        $gridColumns[] = [
+                            'label' => 'Januari',
+                            'attribute' => count($cekkk)-6,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Februari',
+                            'attribute' => count($cekkk)-5,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Maret',
+                            'attribute' => count($cekkk)-4,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'April',
+                            'attribute' => count($cekkk)-3,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Mei',
+                            'attribute' => count($cekkk)-2,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+                        $gridColumns[] = [
+                            'label' => 'Juni',
+                            'attribute' => count($cekkk)-1,
+                            'hAlign' => 'center',
+                            'format'=> ['integer'],
+                            'pageSummary' => true,
+                        ];
+
+                    //BUAT NAMA BEFORE HEADER KOLOM
+                    $headColumns = []; 
+                        $headColumns[] = [
+                            'content' => 'Wilayah',
+                            'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
+                        ];
+                        $headColumns[] = [
+                            'content' => $tahun_proyeksi1[0],
+                            'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
+                        ];
+                        $t = 1;
+                        for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
+                            $headColumns[] = [
+                                'content' => $tahun_proyeksi1[0]+$t,
+                                'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
                             ];
+                            $t++;
+                        };
+                        $headColumns[] = [
+                            'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
+                            'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
+                        ];
 
                     echo GridView::widget([
                         'dataProvider' => $dataProvider,
@@ -1953,12 +2138,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'containerOptions' => ['style'=>'overflow: auto'], 
                         'beforeHeader'=>[
                             [
-                                'columns'=>[
-                                    ['content'=> $this->title, 'options'=>['colspan'=>count($gridColumns), 'class'=>'text-center warning']], //cuma satu kolom header
-                            //        ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']], //uncomment kalau mau membuat header kolom-2
-                              //      ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']],
-                                ], //uncomment kalau mau membuat header kolom-3
-                                'options'=>['class'=>'skip-export'] 
+                                'columns' => $headColumns,  
                             ]
                         ],
                         'exportConfig' => [
@@ -1986,15 +2166,14 @@ $this->params['breadcrumbs'][] = $this->title;
                             'footer' => false,
                         ],
 
-                    ]);
-                    ?>
+                ]); ?>
 
                 <!--div tombol untuk munculkan form ubah data (muncul kalo udah disetujui) -->
                 <?php //if ($cekSetuju): ?>
                 <span class="pull-right">
                     <center><p>
-                        <?= Html::a(Yii::t('app', 'Lihat data laki-laki'), '#.', ['class' => 'btn btn-primary', 'onclick' => "bukaDivLaki2()"]) ?>
-                        <?= Html::a(Yii::t('app', 'Lihat data perempuan'), '#.', ['class' => 'btn btn-warning', 'onclick' => "bukaDivPerempuan()"]) ?>
+                        <?= Html::a(Yii::t('app', 'Lihat data laki-laki'), '#.', ['class' => 'btn btn-primary btn-xs', 'onclick' => "bukaDivLaki2()"]) ?>
+                        <?= Html::a(Yii::t('app', 'Lihat data perempuan'), '#.', ['class' => 'btn btn-warning btn-xs', 'onclick' => "bukaDivPerempuan()"]) ?>
                     </p></center>
                 </span>
                 </br></br>
@@ -2004,31 +2183,223 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p><b>Berikut adalah data hasil proyeksi penduduk laki-laki kabupaten/kota <?= Html::encode(Yii::$app->user->identity->username)?>:</b></p>
                     <?php 
 
-                    $gridColumns = []; 
-                        $gridColumns[] = [
-                            'label' => 'Kode',
-                            'attribute' => '0',
-                            'hAlign' => 'center',
-                            'pageSummary' => Yii::$app->user->identity->wilayah_id,
-                        ];
-                        $gridColumns[] = [
-                            'label' => 'Kabupaten/kota',
-                            'attribute' => '1',
-                            'hAlign' => 'center',
-                            'pageSummary' => Yii::$app->user->identity->username,
-                        ];
-                        for($coba=2;$coba<count($cekkk);$coba++) {
+                        //BUAT NAMA HEADER KOLOM
+                        $gridColumns = []; 
                             $gridColumns[] = [
-                                'attribute' => $coba,
-                                'label'=> 2013+$coba,
-                                'pageSummary' => true,
-                                'format'=> ['integer'],
+                                'label' => 'Kode',
+                                'attribute' => '0',
                                 'hAlign' => 'center',
+                                'pageSummary' => $id_provinsi_terpilih,
                             ];
-                        };
+                            $gridColumns[] = [
+                                'label' => 'Kabupaten/kota',
+                                'attribute' => '1',
+                                'hAlign' => 'center',
+                                'pageSummary' => $provinsi_terpilih,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juni',
+                                'attribute' => '2',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juli',
+                                'attribute' => '3',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Agustus',
+                                'attribute' => '4',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'September',
+                                'attribute' => '5',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Oktober',
+                                'attribute' => '6',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'November',
+                                'attribute' => '7',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Desember',
+                                'attribute' => '8',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
+                                $gridColumns[] = [
+                                    'label' => 'Januari',
+                                    'attribute' => $coba,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Februari',
+                                    'attribute' => $coba+1,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Maret',
+                                    'attribute' => $coba+2,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'April',
+                                    'attribute' => $coba+3,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Mei',
+                                    'attribute' => $coba+4,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Juni',
+                                    'attribute' => $coba+5,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Juli',
+                                    'attribute' => $coba+6,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Agustus',
+                                    'attribute' => $coba+7,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'September',
+                                    'attribute' => $coba+8,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Oktober',
+                                    'attribute' => $coba+9,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'November',
+                                    'attribute' => $coba+10,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Desember',
+                                    'attribute' => $coba+11,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                            };
+                            $gridColumns[] = [
+                                'label' => 'Januari',
+                                'attribute' => count($cekkk)-6,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Februari',
+                                'attribute' => count($cekkk)-5,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Maret',
+                                'attribute' => count($cekkk)-4,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'April',
+                                'attribute' => count($cekkk)-3,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Mei',
+                                'attribute' => count($cekkk)-2,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juni',
+                                'attribute' => count($cekkk)-1,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
 
-                    echo GridView::widget([
-                        'dataProvider' => $dataProvider_laki2,
+                        //BUAT NAMA BEFORE HEADER KOLOM
+                        $headColumns = []; 
+                            $headColumns[] = [
+                                'content' => 'Wilayah',
+                                'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
+                            ];
+                            $headColumns[] = [
+                                'content' => $tahun_proyeksi1[0],
+                                'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
+                            ];
+                            $t = 1;
+                            for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
+                                $headColumns[] = [
+                                    'content' => $tahun_proyeksi1[0]+$t,
+                                    'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
+                                ];
+                                $t++;
+                            };
+                            $headColumns[] = [
+                                'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
+                                'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
+                            ];
+
+                        echo GridView::widget([
+                        'dataProvider' => $dataProvider,
                         'options' => ['style' => 'font-size:12px;'],
                         'columns' => $gridColumns,
                         'containerOptions' => ['style' => 'overflow: auto'], 
@@ -2038,12 +2409,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'containerOptions' => ['style'=>'overflow: auto'], 
                         'beforeHeader'=>[
                             [
-                                'columns'=>[
-                                    ['content'=> 'Data Hasil Proyeksi Penduduk Laki-laki ('. Yii::$app->user->identity->username .')', 'options'=>['colspan'=>count($gridColumns), 'class'=>'text-center warning']], //cuma satu kolom header
-                            //        ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']], //uncomment kalau mau membuat header kolom-2
-                              //      ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']],
-                                ], //uncomment kalau mau membuat header kolom-3
-                                'options'=>['class'=>'skip-export'] 
+                                'columns' => $headColumns,  
                             ]
                         ],
                         'exportConfig' => [
@@ -2079,31 +2445,223 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p><b>Berikut adalah data hasil proyeksi penduduk perempuan kabupaten/kota <?= Html::encode(Yii::$app->user->identity->username)?>:</b></p>
                     <?php 
 
-                    $gridColumns = []; 
-                        $gridColumns[] = [
-                            'label' => 'Kode',
-                            'attribute' => '0',
-                            'hAlign' => 'center',
-                            'pageSummary' => Yii::$app->user->identity->wilayah_id,
-                        ];
-                        $gridColumns[] = [
-                            'label' => 'Kabupaten/kota',
-                            'attribute' => '1',
-                            'hAlign' => 'center',
-                            'pageSummary' => Yii::$app->user->identity->username,
-                        ];
-                        for($coba=2;$coba<count($cekkk);$coba++) {
+                    //BUAT NAMA HEADER KOLOM
+                        $gridColumns = []; 
                             $gridColumns[] = [
-                                'attribute' => $coba,
-                                'label'=> 2013+$coba,
-                                'pageSummary' => true,
-                                'format'=> ['integer'],
+                                'label' => 'Kode',
+                                'attribute' => '0',
                                 'hAlign' => 'center',
+                                'pageSummary' => $id_provinsi_terpilih,
                             ];
-                        };
+                            $gridColumns[] = [
+                                'label' => 'Kabupaten/kota',
+                                'attribute' => '1',
+                                'hAlign' => 'center',
+                                'pageSummary' => $provinsi_terpilih,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juni',
+                                'attribute' => '2',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juli',
+                                'attribute' => '3',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Agustus',
+                                'attribute' => '4',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'September',
+                                'attribute' => '5',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Oktober',
+                                'attribute' => '6',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'November',
+                                'attribute' => '7',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Desember',
+                                'attribute' => '8',
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
+                                $gridColumns[] = [
+                                    'label' => 'Januari',
+                                    'attribute' => $coba,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Februari',
+                                    'attribute' => $coba+1,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Maret',
+                                    'attribute' => $coba+2,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'April',
+                                    'attribute' => $coba+3,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Mei',
+                                    'attribute' => $coba+4,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Juni',
+                                    'attribute' => $coba+5,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Juli',
+                                    'attribute' => $coba+6,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Agustus',
+                                    'attribute' => $coba+7,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'September',
+                                    'attribute' => $coba+8,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Oktober',
+                                    'attribute' => $coba+9,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'November',
+                                    'attribute' => $coba+10,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                                $gridColumns[] = [
+                                    'label' => 'Desember',
+                                    'attribute' => $coba+11,
+                                    'hAlign' => 'center',
+                                    'format'=> ['integer'],
+                                    'pageSummary' => true,
+                                ];
+                            };
+                            $gridColumns[] = [
+                                'label' => 'Januari',
+                                'attribute' => count($cekkk)-6,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Februari',
+                                'attribute' => count($cekkk)-5,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Maret',
+                                'attribute' => count($cekkk)-4,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'April',
+                                'attribute' => count($cekkk)-3,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Mei',
+                                'attribute' => count($cekkk)-2,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
+                            $gridColumns[] = [
+                                'label' => 'Juni',
+                                'attribute' => count($cekkk)-1,
+                                'hAlign' => 'center',
+                                'format'=> ['integer'],
+                                'pageSummary' => true,
+                            ];
 
-                    echo GridView::widget([
-                        'dataProvider' => $dataProvider_perempuan,
+                        //BUAT NAMA BEFORE HEADER KOLOM
+                        $headColumns = []; 
+                            $headColumns[] = [
+                                'content' => 'Wilayah',
+                                'options'=> ['colspan'=>2, 'class'=>'text-center warning'],
+                            ];
+                            $headColumns[] = [
+                                'content' => $tahun_proyeksi1[0],
+                                'options'=> ['colspan'=>7, 'class'=>'text-center warning'],
+                            ];
+                            $t = 1;
+                            for($coba=9;$coba<count($cekkk)-7;$coba=$coba+12) {
+                                $headColumns[] = [
+                                    'content' => $tahun_proyeksi1[0]+$t,
+                                    'options'=> ['colspan'=>12, 'class'=>'text-center warning'],
+                                ];
+                                $t++;
+                            };
+                            $headColumns[] = [
+                                'content' => $tahun_proyeksi1[count($tahun_proyeksi1)-1],
+                                'options'=> ['colspan'=>6, 'class'=>'text-center warning'],
+                            ];
+
+                        echo GridView::widget([
+                        'dataProvider' => $dataProvider,
                         'options' => ['style' => 'font-size:12px;'],
                         'columns' => $gridColumns,
                         'containerOptions' => ['style' => 'overflow: auto'], 
@@ -2113,12 +2671,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'containerOptions' => ['style'=>'overflow: auto'], 
                         'beforeHeader'=>[
                             [
-                                'columns'=>[
-                                    ['content'=> 'Data Hasil Proyeksi Penduduk Perempuan ('. Yii::$app->user->identity->username .')', 'options'=>['colspan'=>count($gridColumns), 'class'=>'text-center warning']], //cuma satu kolom header
-                            //        ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']], //uncomment kalau mau membuat header kolom-2
-                              //      ['content'=>'', 'options'=>['colspan'=>0, 'class'=>'text-center warning']],
-                                ], //uncomment kalau mau membuat header kolom-3
-                                'options'=>['class'=>'skip-export'] 
+                                'columns' => $headColumns,  
                             ]
                         ],
                         'exportConfig' => [

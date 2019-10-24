@@ -1,5 +1,5 @@
 <?php 
-	
+  
 use yii\helpers\Html;
 use app\models\DataKabKota;
 use app\models\HasilProyeksi;
@@ -12,10 +12,10 @@ use yii\helpers\Url
 <div class="site-simpan">
 
     <?php if (Yii::$app->user->identity->role == 'provinsi'): ?>
-    	  <!-- Menghapus hasil proyeksi provinsi terkait beserta laporan pengirimannya. -->
+        <!-- Menghapus hasil proyeksi provinsi terkait beserta laporan pengirimannya. -->
             <?php if ($stat == 'hapus_proyeksi'): //jika setuju maka mengubah status menjadi "Disetujui"?>
-        		<?php
-        			//Buat koneksi ke DB
+            <?php
+              //Buat koneksi ke DB
                         include "koneksi.php";
                         $sql_hapusHasil = "DELETE FROM hasil_proyeksi WHERE provinsi = '" . Yii::$app->user->identity->username . "'";
                         $query_hapusHasil = mysqli_query($host,$sql_hapusHasil) or die(mysqli_error());
@@ -30,7 +30,7 @@ use yii\helpers\Url
           <?php
             //ambil email wilayah asal yang ada
               $sql_wil = "SELECT email
-                          FROM masuk
+                          FROM pengguna
                           WHERE username = '" . $asal . "'";
               $query_wil = mysqli_query($host,$sql_wil) or die(mysqli_error());
               $tahun='';
@@ -239,12 +239,11 @@ use yii\helpers\Url
         <!-- Melakukan pengelolaan data laporan hasil proyeksi, apakah disetujui, dihapus, atau buat baru. -->
           <?php
           //ambil email wilayah asal yang ada
-            $id_wilayah = substr(Yii::$app->user->identity->wilayah_id, 0, 2);
+            include "koneksi.php";
             $sql_wil = "SELECT email
-                        FROM masuk
+                        FROM pengguna
                         WHERE username = '" . $asal . "'";
             $query_wil = mysqli_query($host,$sql_wil) or die(mysqli_error());
-            $tahun='';
             while($row = mysqli_fetch_array($query_wil)){ 
               $email_provinsi = $row['email'];
             };
@@ -253,7 +252,6 @@ use yii\helpers\Url
             <?php if ($stat == 'setuju'): //jika setuju maka mengubah status menjadi "Disetujui"?>
                 <?php
                     //Buat koneksi ke DB dan run SQL
-                        include "koneksi.php";
                         $sql_statusPeriksa = "UPDATE laporan
                                           SET status = 'DISETUJUI' 
                                           WHERE perihal = 'Cek hasil proyeksi' 

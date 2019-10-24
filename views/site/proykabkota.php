@@ -141,7 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 //Mencari lpp_tahunan (laju pertumbuhan) yang tidak valid.
                                     $kesalahan = 0;
                                     for($i=0;$i<count($kabkota);$i++){
-                                        if ($lpp_tahunan[$i]<=0 || $lpp_tahunan[$i]>=0.02 || $lpp_tahunan[$i]>=0.07) {
+                                        if ($lpp_tahunan[$i]<=0 || $lpp_tahunan[$i]>=0.03 || $lpp_tahunan[$i]>=0.07) {
                                             $kesalahan++;
                                         };
                                     };
@@ -155,7 +155,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     for($i=0;$i<count($kabkota);$i++){
                                         if ($lpp_tahunan[$i]<=0) {
                                             $kesalahan_0persen[] = $kabkota[$i];
-                                        } else if ($lpp_tahunan[$i]>=0.02) {
+                                        } else if ($lpp_tahunan[$i]>=0.03 && $lpp_tahunan[$i]<0.07) {
                                             $kesalahan_3persen[] = $kabkota[$i];
                                         } else if ($lpp_tahunan[$i]>=0.07) {
                                             $kesalahan_7persen[] = $kabkota[$i];
@@ -164,21 +164,21 @@ $this->params['breadcrumbs'][] = $this->title;
                                     if($kesalahan_0persen){
                                         echo '<font color=red><b><br>&nbsp;Kabupaten/kota dengan LPP bernilai 0: <br>';
                                         for($i=0;$i<count($kesalahan_0persen);$i++){
-                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kabkota[$i] . '<br>';
+                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kesalahan_0persen[$i] . '<br>';
                                         };
                                         echo '</b></font>';
                                     }
                                     elseif($kesalahan_3persen){
                                         echo '<font color=red><b><br>&nbsp;Kabupaten/kota dengan LPP lebih dari 3%: <br>';
                                         for($i=0;$i<count($kesalahan_3persen);$i++){
-                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kabkota[$i] . '<br>';
+                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kesalahan_3persen[$i] . '<br>';
                                         };
                                         echo '</b></font>';
                                     }
                                     elseif($kesalahan_7persen){
                                         echo '<font color=red><b><br>&nbsp;Kabupaten/kota dengan LPP lebih dari 7%: <br>';
                                         for($i=0;$i<count($kesalahan_7persen);$i++){
-                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kabkota[$i] . '<br>';
+                                            echo '&nbsp;&nbsp;&nbsp;- ' . $kesalahan_7persen[$i] . '<br>';
                                         };
                                         echo '</b></font>';
                                     };
